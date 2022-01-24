@@ -29,11 +29,11 @@ symbol_code = 0
 
 for plastics in recycling_codes:
     numerical_code = str(plastics[0])
-    plastic_symbol = str(plastics[1])
+    plastic_symbol = str(plastics[1]).upper()
     symbol_code = int(plastics[2])
 
     code_name = numerical_code + '-' + plastic_symbol
-    print(code_name)
+    print("### ## # Creating: " + code_name)
     
     rec_sym_out_file = ntpath.join(
         f'{path.dirname(path.abspath(__file__))}', 
@@ -51,13 +51,14 @@ for plastics in recycling_codes:
         font_size = 7        
 
     b = scadfile.Recycling_Symbol(
-        Symbol=symbol_code, 
-        Numerical_Code=numerical_code, 
-        Plastic_Symbol=plastic_symbol, 
-        Font_Size=font_size, 
-        Length=30, Width=30, 
-        Thickness=2, 
-        Arrow_Width=2.5, Arrow_Head_Width=5, 
+        Symbol=symbol_code,
+        Numerical_Code=numerical_code,
+        Plastic_Symbol=plastic_symbol,
+        Font_Size=font_size,
+        Length=30, Width=30,
+        Thickness=2,
+        Arrow_Width=2.5,
+        Arrow_Head_Width=5,
         Arrow_Head_Length=5)
 
     scad_render_to_file(b, rec_sym_out_file)
