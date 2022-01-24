@@ -5,6 +5,8 @@ from solid import *
 from solid.utils import *
 from subprocess import run
 
+export_x_mirrored = 1 # 0 or 1. 0 =  not mirrored; 1 = mirrored
+
 recycling_codes = []
 
 # https://en.wikipedia.org/wiki/Recycling_codes#List_of_Chinese_codes_for_plastics_products
@@ -59,7 +61,8 @@ for plastics in recycling_codes:
         Thickness=2,
         Arrow_Width=2.5,
         Arrow_Head_Width=5,
-        Arrow_Head_Length=5)
+        Arrow_Head_Length=5,
+        x_mirror=export_x_mirrored)
 
     scad_render_to_file(b, rec_sym_out_file)
 

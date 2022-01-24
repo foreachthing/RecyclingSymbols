@@ -1,4 +1,4 @@
-module Recycling_Symbol(Symbol, Numerical_Code, Plastic_Symbol, Font_Size, Length, Width, Thickness, Arrow_Width, Arrow_Head_Width, Arrow_Head_Length){
+module Recycling_Symbol(Symbol, Numerical_Code, Plastic_Symbol, Font_Size, Length, Width, Thickness, Arrow_Width, Arrow_Head_Width, Arrow_Head_Length, x_mirror){
 
 font_quality = 35;
 
@@ -14,18 +14,19 @@ font = "Helvetica Rounded LT Std:style=Bold";
 
 if (Symbol == 1){
 	$fn = 10;
-	Recoverable_Plastic(Length, Width, Thickness, Arrow_Width, Arrow_Head_Width, Arrow_Head_Length);
+	mirror([x_mirror,0,0]){
+		Recoverable_Plastic(Length, Width, Thickness, Arrow_Width, Arrow_Head_Width, Arrow_Head_Length);
 
-    translate([0,-1,-Thickness*.5])
-        linear_extrude(Thickness) {
-            text(Numerical_Code, size=Font_Size, font=font, halign="center", valign="center", $fn=font_quality);
-}
-    
-	translate([0, Width/-2,-Thickness*.5])
-        linear_extrude(Thickness) {
-            text(Plastic_Symbol, size=8, font=font, halign="center", valign="center", $fn=font_quality);
-}
-
+		translate([0,-1,-Thickness*.5])
+			linear_extrude(Thickness) {
+				text(Numerical_Code, size=Font_Size, font=font, halign="center", valign="center", $fn=font_quality);
+			}
+		
+		translate([0, Width/-2,-Thickness*.5])
+			linear_extrude(Thickness) {
+				text(Plastic_Symbol, size=8, font=font, halign="center", valign="center", $fn=font_quality);
+			}
+	}
 
 
 } if (Symbol == 2){
@@ -38,12 +39,12 @@ if (Symbol == 1){
 
     translate([0,-ncheight/4,0])
         scale([1, 1, Thickness])
-            text(Numerical_Code, 6, font="Arial Rounded MT Bold:style=Regular", halign="center", valign="baseline");
+            text(Numerical_Code, Font_Size+2, font=font, halign="center", valign="baseline");
     
-	translate([0, Width/-2,0])
+	translate([0, Width/-1.4,0])
 		scale([1, 1, Thickness])
 			translate([0,psheight/-4,0])
-                text(Plastic_Symbol, 8, font="Arial Rounded MT Bold:style=Regular", halign="center", valign="baseline");
+                text(Plastic_Symbol, 8, font=font, halign="center", valign="baseline");
 
 } if (Symbol == 4){
 	
@@ -51,25 +52,25 @@ if (Symbol == 1){
 
     translate([0,-ncheight/4,0])
         scale([1, 1, Thickness])
-            text(Numerical_Code, 6, font="Arial Rounded MT Bold:style=Regular", halign="center", valign="baseline");
+            text(Numerical_Code, Font_Size+2, font=font, halign="center", valign="baseline");
     
-	translate([0, Width/-2,0])
+	translate([0, Width/-1.4,0])
 		scale([1, 1, Thickness])
 			translate([0,psheight/-4,0])
-                text(Plastic_Symbol, 8, font="Arial Rounded MT Bold:style=Regular", halign="center", valign="baseline");
+                text(Plastic_Symbol, 8, font=font, halign="center", valign="baseline");
 
 } if (Symbol == 5){
 
 	Repeatable_Plastic(Length, Width, Thickness, Arrow_Width, Arrow_Head_Width, Arrow_Head_Length);
 
-    translate([0,-ncheight/4,0])
+    translate([0,-ncheight/5,0])
         scale([1, 1, Thickness])
-            text(Numerical_Code, 6, font="Arial Rounded MT Bold:style=Regular", halign="center", valign="baseline");
+            text(Numerical_Code, Font_Size+2, font=font, halign="center", valign="baseline");
     
-	translate([0, Width/-2,0])
+	translate([0, Width/-1.6,0])
 		scale([1, 1, Thickness])
 			translate([0,psheight/-4,0])
-                text(Plastic_Symbol, 8, font="Arial Rounded MT Bold:style=Regular", halign="center", valign="baseline");
+                text(Plastic_Symbol, 8, font=font, halign="center", valign="baseline");
 
 }
 
@@ -171,8 +172,7 @@ module Recoverable_Plastic(Length, Width, Thickness, Arrow_Width, Arrow_Head_Wid
 			for (i = [0:3]){
 				rotate(i*360/3, [0,0,1])
 					translate([0,((Width/2)*sqrt(3))/2+Arrow_Width/2,0])
-						cylinder(h = Thickness, r = Arrow_Width/2, center = true);
-		
+						cylinder(h=Thickness, r=Arrow_Width/2, center = true);		
 		}
 		
 		hull()
@@ -194,11 +194,11 @@ module Recoverable_Plastic(Length, Width, Thickness, Arrow_Width, Arrow_Head_Wid
 	
 	}
 
-rotate([0,0, 360/6])
+rotate([0, 0, 360/6])
 	for (i = [0:3]){
 		rotate(i*360/3, [0,0,1])
 			translate([-.5,sqrt((pow(Width/2,2)) - pow(((Width/2)*sqrt(3))/2,2)),0])
-				triangle(Arrow_Head_Length,Arrow_Head_Width, Thickness);
+				triangle(Arrow_Head_Length, Arrow_Head_Width, Thickness);
 
 }
 
