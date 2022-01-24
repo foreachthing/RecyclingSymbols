@@ -1,13 +1,15 @@
 module Recycling_Symbol(Symbol, Numerical_Code, Plastic_Symbol, Font_Size, Length, Width, Thickness, Arrow_Width, Arrow_Head_Width, Arrow_Head_Length){
 
+font_quality = 35;
+
 ncwidth = 1;
 ncheight = 22;
 
 pswidth = 1;
 psheight = 15;
 
-//font = "Bahnschrift:style=SemiBold";
-font = "Arial Rounded MT Bold:style=Regular";
+// https://www.maisfontes.com/helvetica-rounded-lt-std-bold.font
+font = "Helvetica Rounded LT Std:style=Bold";
 
 
 if (Symbol == 1){
@@ -16,12 +18,12 @@ if (Symbol == 1){
 
     translate([0,-1,-Thickness*.5])
         linear_extrude(Thickness) {
-            text(Numerical_Code, size=Font_Size, font=font, halign="center", valign="center", $fn=5);
+            text(Numerical_Code, size=Font_Size, font=font, halign="center", valign="center", $fn=font_quality);
 }
     
 	translate([0, Width/-2,-Thickness*.5])
         linear_extrude(Thickness) {
-            text(Plastic_Symbol, size=8, font=font, halign="center", valign="center", $fn=5);
+            text(Plastic_Symbol, size=8, font=font, halign="center", valign="center", $fn=font_quality);
 }
 
 
