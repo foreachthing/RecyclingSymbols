@@ -5,8 +5,8 @@ These symbols (.stl) can then be imported to any slicer like PrusaSlicer, Cura a
 
 ## Usage in PrusaSlicer
 1. Add part
-2. add "negative volume" mondifier and choose your symbol
-3. mirror, place and scale symbol
+2. add "negative volume" modifier and choose your symbol
+3. mirror if necessery, place and/or scale symbol
 
 ![PLA in PrusaSlicer](https://user-images.githubusercontent.com/10420187/150867363-8e9251c6-2c51-4817-9e8b-ec53f0d764ea.png)
 
@@ -14,7 +14,7 @@ These symbols (.stl) can then be imported to any slicer like PrusaSlicer, Cura a
 
 Feel free to PR more symbols.
 
-## RUN
+## RUN Script to Create Symbols
 You'll need [Python](https://www.python.org/), [SolidPython](https://github.com/SolidCode/SolidPython) and [OpenSCAD](https://openscad.org/). See notes in `Recycling_Symbols.py`.
 Then you just run `Recycling_Symbols.py` and wait for the symbols to be created.
 
