@@ -1,6 +1,6 @@
 # RecyclingSymbols
 
-Create Recycling Symbols for pretty much every plastic on Wikipedia.
+Create Recycling Symbols for pretty much every plastic on [Wikipedia](https://en.wikipedia.org/wiki/Recycling_codes#List_of_Chinese_codes_for_plastics_products).
 These symbols (.stl) can then be imported to any slicer like PrusaSlicer, Cura and so on.
 
 ## Usage in PrusaSlicer
