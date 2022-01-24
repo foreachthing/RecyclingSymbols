@@ -1,7 +1,7 @@
 # RecyclingSymbols
 
 Create Recycling Symbols for pretty much every plastic on Wikipedia.
-So far only the Recycling symbold works.
+So far only the Recycling symbol works.
 
 Feel free to PR more symbols.
 
