@@ -1,7 +1,16 @@
 # RecyclingSymbols
 
 Create Recycling Symbols for pretty much every plastic on Wikipedia.
-So far only the Recycling symbol works.
+These symbols (.stl) can then be imported to any slicer like PrusaSlicer, Cura and so on.
+
+## Usage in PrusaSlicer
+1. Add part
+2. add "negative volume" mondifier and choose your symbol
+3. mirror, place and scale symbol
+
+![PLA in PrusaSlicer](https://user-images.githubusercontent.com/10420187/150867363-8e9251c6-2c51-4817-9e8b-ec53f0d764ea.png)
+
+
 
 Feel free to PR more symbols.
 
