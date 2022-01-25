@@ -5,7 +5,7 @@ from solid import *
 from solid.utils import *
 from subprocess import run
 
-export_x_mirrored = 1 # 0 or 1. 0 =  not mirrored; 1 = mirrored
+export_x_mirrored = 1 # 0 or 1 ==> 0 =  not mirrored; 1 = mirrored
 
 recycling_codes = []
 
