@@ -45,7 +45,7 @@ def argumentparser():
         metavar=('code', 'description', 'symbol'),
         action=AddSymbolAction,
         default=[],
-        help='Outputs single symbol, if defined. Mirrored if -m is passed. '\
+        help='Outputs single symbol, if defined. '\
         'Code: plastic code (92 for PLA). Description: PLA. Symbol: 1')
 
     parser.add_argument('-m', action='store_true', default=False, \
