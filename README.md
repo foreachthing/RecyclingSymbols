@@ -32,6 +32,7 @@ To get a list of all possible arguments, type `Recycling_Symbols.py -h`.
 * `--codelist` lets you define your own file with symbols to be created.
 * `--symbol` lets you define just one single symbol (list won't be used). Example: `--symbol 92 PLA 1` will create the symbol for PLA, number 99 within the recycling arrows.
 * `-m` if argument is passed, the symbols will be mirrored (so you won't have to do that manually in your slicer software).
+* `--font-quality` sets the resolution of the font. Rounded fonts need around 35 wheras a square font only needs 5.
 
 ```
 --path-openscad PATH_OPENSCAD
@@ -43,6 +44,8 @@ To get a list of all possible arguments, type `Recycling_Symbols.py -h`.
                       Description: PLA. 
                       Symbol: 1
 -m                    Outputs the symbols mirrored if argument is passed. (Default: False)
+--font-quality FONT_QUALITY
+                        Quality (or poly count) for the font. Only rounded fonts need high poly count. (Default: 35)
 ```
 
 
@@ -57,7 +60,7 @@ In Windows, copy your font files to `c:\Users\<user>\.fonts\` (create folder if 
 
 ## Todo
 - [] Symbol 2 does not properly work. I don't even know what it should look like. Any ideas are appreciated.
-- [] Command argument for font quality. Rounded fonts need higher poly-count.
+- [x] Command argument for font quality. Rounded font needs a higher resolution.
 
 
 

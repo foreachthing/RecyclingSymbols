@@ -1,6 +1,4 @@
-module Recycling_Symbol(Symbol, Numerical_Code, Plastic_Symbol, Font_Size, Length, Width, Thickness, Arrow_Width, Arrow_Head_Width, Arrow_Head_Length, x_mirror){
-
-font_quality = 35;
+module Recycling_Symbol(Symbol, Numerical_Code, Plastic_Symbol, Font_Size, Length, Width, Thickness, Arrow_Width, Arrow_Head_Width, Arrow_Head_Length, x_mirror, font_quality){
 
 ncwidth = 1;
 ncheight = 22;

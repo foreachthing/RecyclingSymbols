@@ -52,6 +52,11 @@ def argumentparser():
     help='Outputs the symbols mirrored if argument is passed. '\
         '(Default: %(default)s)')
 
+    parser.add_argument('--font-quality', type=int, default=35, \
+    help='Quality (or poly count) for the font. Only rounded fonts '\
+        'need high poly count. '\
+        '(Default: %(default)s)')
+
     try:
         args = parser.parse_args()
 
@@ -74,8 +79,7 @@ RECYCLING_CODES = []
 
 # add single symbol, if argument is passed
 if len(ARGS.symbol) == 3:
-    x, y, z = ARGS.symbol
-    RECYCLING_CODES.append([x, y, z])
+    RECYCLING_CODES.append(ARGS.symbol)
 
 if len(RECYCLING_CODES) == 0:
     # https://en.wikipedia.org/wiki/Recycling_codes#List_of_Chinese_codes_for_plastics_products
@@ -146,7 +150,8 @@ for plastics in RECYCLING_CODES:
         Arrow_Width=2.5,
         Arrow_Head_Width=5,
         Arrow_Head_Length=5,
-        x_mirror=EXPORT_X_MIRRORED)
+        x_mirror=EXPORT_X_MIRRORED,
+        font_quality=ARGS.font_quality)
 
     solid.scad_render_to_file(b, REC_SYM_OUT_FILE)
 
