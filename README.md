@@ -59,7 +59,7 @@ In Windows, copy your font files to `c:\Users\<user>\.fonts\` (create folder if 
 
 
 ## Todo
-- [] Symbol 2 does not properly work. I don't even know what it should look like. Any ideas are appreciated.
+- [ ] Symbol 2 does not properly work. I don't even know what it should look like. Any ideas are appreciated.
 - [x] Command argument for font quality. Rounded font needs a higher resolution.
 
 
