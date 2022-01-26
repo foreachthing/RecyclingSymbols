@@ -3,6 +3,10 @@
 Create Recycling Symbols for pretty much every plastic on [Wikipedia](https://en.wikipedia.org/wiki/Recycling_codes#List_of_Chinese_codes_for_plastics_products).
 These symbols (.stl) can then be imported to any slicer like PrusaSlicer, Cura and so on.
 
+
+The original file `Recycling_Symbols.scad` is based on the file from appropedia.org[^1].
+
+
 ## Usage in PrusaSlicer
 1. Add part
 2. add "negative volume" modifier and choose your symbol
@@ -31,12 +35,14 @@ To get a list of all possible arguments, type `Recycling_Symbols.py -h`.
 
 ```
 --path-openscad PATH_OPENSCAD
-                        Path to OpenSCAD.com (Default: h:\apps\PortableApps\OpenSCAD\openscad.com)
-  --codelist CODELIST   File with all the codes listed. (Default: codelist.txt)
-  --symbol code description symbol
-                        Outputs single symbol, if defined. Mirrored if -m is passed. Code: plastic code (92 for PLA).
-                        Description: PLA. Symbol: 1
-  -m                    Outputs the symbols mirrored if argument is passed. (Default: False)
+                      Path to OpenSCAD.com (Default: h:\apps\PortableApps\OpenSCAD\openscad.com)
+--codelist CODELIST   File with all the codes listed. (Default: codelist.txt)
+--symbol code description symbol
+                      Outputs single symbol, if defined. Mirrored if -m is passed. 
+                      Code: plastic code (92 for PLA).
+                      Description: PLA. 
+                      Symbol: 1
+-m                    Outputs the symbols mirrored if argument is passed. (Default: False)
 ```
 
 
@@ -47,3 +53,12 @@ Download Font: https://www.maisfontes.com/helvetica-rounded-lt-std-bold.font
 
 Any other installed font can be used.
 In Windows, copy your font files to `c:\Users\<user>\.fonts\` (create folder if necessary) and restart OpenSCAD. To get a list of installed fonts in OpenSCAD, go to Help -> Font list.
+
+
+## Todo
+- [] Symbol 2 does not properly work. I don't even know what it should look like. Any ideas are appreciated.
+- [] Command argument for font quality. Rounded fonts need higher poly-count.
+
+
+
+[^1]: Original OpenSCAD file from: https://www.appropedia.org/Polymer_recycling_codes_for_distributed_manufacturing_with_3-D_printers
